@@ -46,7 +46,7 @@ module.exports = {
 					if(err) return next(err);
 				});
 				User.publishUpdate(user.id,{
-					loggedIn:true,
+					log:'in',
 					id: user.id
 				});
 				if(!user.admin){
@@ -64,6 +64,10 @@ module.exports = {
 			User.update(userId, {online:false}, function(err){
 				if(err) return next(err);
 				req.session.destroy();
+				User.publishUpdate(userId,{
+					log:'out',
+					id: userId
+				});
 				res.redirect('session/new');
 			});
 		});	

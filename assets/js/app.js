@@ -21,14 +21,20 @@
   socket.on('connect', function socketConnected() {
 
     console.log("This is from the connect: ");
+
+    io.socket.on('user', function onServerSentEvent (msg) {
+      console.log(msg);
+    });
 //////////////////////////////////////////////
-    io.socket.get('/user/index', function (resData) {
-      console.log(resData);
-  });
+    /*io.socket.get('/user/index', function (users) {
+      console.log(users);
+  });*/
+    io.socket.get('/user/asubscribe', function (users) {
+      console.log('subscribe to user model');
+      console.log(users);
+    });
 
   });
-  io.socket.on('user', function(event){
-    console.log(event);});
 
 
   // Expose connected `socket` instance globally so that it's easy

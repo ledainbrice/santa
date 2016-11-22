@@ -109,12 +109,30 @@ module.exports = {
 		});
 	},
 
-	subscribe: function(req,res,next){
+	asubscribe: function(req,res){
+
 		User.find( function foundUsers(err,users){
-			if(err) return next(err);
-			User.watch(req);
-			User.subscribe(req.socket,users);
+			if (err) {
+				console.log(err);
+				return res.json({'key':'false'});
+			}
+			//if(!users) return next();
+			if(req.isSocket){
+				User.subscribe(req.socket,_.pluck(users, 'id'));
+			}
+			return res.json({'key':'true'});
 		});
+
+		/*if(req.isSocket){
+			User.find( function foundUsers(err,users){
+				console.log('passage');
+				if(err) return res.json(err);
+				console.log(users);
+				User.watch(req);
+				User.subscribe(req.socket,_.pluck(users, 'id'));
+				return res.json(_.pluck(users, 'id'));
+			});	
+		}	*/
 	}
 	
 };
