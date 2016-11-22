@@ -22,7 +22,9 @@
 
     console.log("This is from the connect: ");
 //////////////////////////////////////////////
-
+    io.socket.get('/user/index', function (resData) {
+      console.log(resData);
+  });
 
   });
   io.socket.on('user', function(event){

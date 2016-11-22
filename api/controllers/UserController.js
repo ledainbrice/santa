@@ -49,6 +49,9 @@ module.exports = {
 		User.find( function foundUsers(err,users){
 			if (err) return next(err);
 			//if(!users) return next();
+			if(req.isSocket){
+				return res.json(users);
+			}
 			res.view({
 				users:users
 			});

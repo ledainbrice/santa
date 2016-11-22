@@ -49,7 +49,6 @@ module.exports = {
 					loggedIn:true,
 					id: user.id
 				});
-				console.log(user);
 				if(!user.admin){
 					res.redirect('/user/show/'+user.id);	
 					return;
