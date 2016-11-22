@@ -30,7 +30,7 @@ module.exports = {
 
 			//res.json(user);
 			//req.session.flash = {};
-			res.redirect('/user/show/'+user.id);
+			res.redirect('/');
 		});
 	},
 
