@@ -23,9 +23,9 @@ module.exports.policies = {
 
 
   user:{
-    new:["flash",'authenticated',"admin"],
+    new:["flash"],
     index:["flash",'authenticated',"admin"],
-    create:["flash",'authenticated',"admin"],
+    create:["flash"],
     show:["matched",'authenticated'],
     edit:["matched",'authenticated'],
     update:["matched",'authenticated']
