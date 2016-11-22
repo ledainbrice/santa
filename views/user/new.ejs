@@ -1,0 +1,26 @@
+<form action="/user/create" method="POST" class="form-signin">
+	<h2 class="form-signin-heading">Création de compte</h2>
+
+	<div class="control-group">
+		<input type="text" class="form-control"   placeholder="votre nom" name="name">
+	</div>
+
+	<div class="control-group">
+		<input type="text" class="form-control"   placeholder="votre prénom" name="firstname">
+	</div>
+
+	<div class="control-group">
+		<input type="text" class="form-control"   placeholder="votre email" name="email">
+	</div>
+
+	<div class="control-group">
+		<input type="text" class="form-control"   placeholder="mot de passe" name="password">
+	</div>
+
+	<div class="control-group">
+		<input type="text" class="form-control"   placeholder="confirmer le mot de passe" name="confirmation">
+	</div>
+
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="Création du compte" />
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>
