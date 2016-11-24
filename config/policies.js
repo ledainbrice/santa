@@ -29,5 +29,14 @@ module.exports.policies = {
     show:["matched",'authenticated'],
     edit:["matched",'authenticated'],
     update:["matched",'authenticated']
+  },
+
+  group:{
+    new:["flash",'authenticated',],
+    index:["flash",'authenticated',"admin"],
+    create:["flash"],
+    show:["matched",'authenticated'],
+    edit:["matched",'authenticated'],
+    update:["matched",'authenticated']
   }
 };

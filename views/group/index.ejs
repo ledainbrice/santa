@@ -1,0 +1,13 @@
+<div class="container">
+	<h3>Groups</h3>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+		</tr>
+		<% _.each(groups,function(group){ %>
+		<tr data-id="<%= group.id %>" data-model="group">
+			<td><%= group.name %></td>
+		</tr>
+		<% }) %>
+	</table>
+</div>
