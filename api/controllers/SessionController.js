@@ -49,6 +49,7 @@ module.exports = {
 					log:'in',
 					id: user.id
 				});
+				console.log('connection de '+user.id);
 				if(!user.admin){
 					res.redirect('/user/show/'+user.id);	
 					return;
@@ -68,6 +69,7 @@ module.exports = {
 					log:'out',
 					id: userId
 				});
+				console.log('deconnection de '+userId);
 				res.redirect('session/new');
 			});
 		});	
